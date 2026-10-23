@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="shortcut icon" href="img/Logos/serpiente.png" type="image/png">
+    <title>Panel de Conductores — Sinfonías del Terror</title>
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Cuprum:ital,wght@0,400..700;1,400..700&family=El+Messiri:wght@400..700&family=Grey+Qo&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- INICIO DE SESIÓN -->
+    <div class="login-screen" id="login-screen">
+        <div class="brand-mark">
+            <img src="img/Logos/serpiente.png" alt="Sinfonías del Terror">
+            <span>Sinfonías del Terror</span>
+        </div>
+        <span class="tagline">Solo para los que ya conocen el camino</span>
+        <h1>Panel de Conductores</h1>
+
+        <form class="login-card" id="login-form">
+            <label for="login-email">Correo</label>
+            <input type="email" id="login-email" required autocomplete="username">
+            <label for="login-pass">Contraseña</label>
+            <input type="password" id="login-pass" required autocomplete="current-password">
+            <div class="login-actions">
+                <button type="submit" class="hero-btn" style="cursor:pointer; width:100%;">Iniciar sesión</button>
+            </div>
+            <a href="index.html" class="back-arrow">&larr; Volver al inicio</a>
+            <p id="login-error"></p>
+        </form>
+    </div>
+
+    <!-- BIENVENIDA (dos pasos, antes de entrar al editor) -->
+    <div class="welcome-screen" id="welcome-screen">
+        <div class="welcome-slide welcome-slide-1 active" id="welcome-slide-1">
+            <span class="tagline">Tu sesión está abierta</span>
+            <h1 id="welcome-titulo">Bienvenida</h1>
+            <p class="lede">a tu rincón de confianza</p>
+            <div class="welcome-actions">
+                <button type="button" class="hero-btn" id="btn-welcome-continuar" style="cursor:pointer;">Continuar</button>
+            </div>
+        </div>
+        <div class="welcome-slide welcome-slide-2" id="welcome-slide-2">
+            <span class="tagline">¿Qué quieres hacer hoy?</span>
+            <h1>Elige por dónde empezar</h1>
+            <div class="welcome-actions">
+                <button type="button" class="hero-btn" data-ir="nueva" style="cursor:pointer;">Escribir una historia nueva</button>
+                <button type="button" class="hero-btn" data-ir="historias" style="cursor:pointer;">Mis historias</button>
+                <button type="button" class="hero-btn" data-ir="borradores" style="cursor:pointer;">Mis borradores</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- EDITOR (visible tras iniciar sesión) -->
+    <div class="editor-screen" id="editor-screen" style="display:none;">
+        <div class="editor-top">
+            <a href="index.html" class="brand" style="display:flex;">
+                <img src="img/Logos/serpiente.png" alt="" style="width:34px;height:34px;">
+                <span style="font-size:13px; letter-spacing:2px;">Sinfonías del Terror</span>
+            </a>
+            <div class="editor-top-actions">
+                <a href="blog.html">Ver el Blog público →</a>
+                <div class="profile-wrap">
+                    <button id="profile-circle" class="profile-circle" type="button"></button>
+                    <div class="profile-menu" id="profile-menu">
+                        <span class="profile-menu-name" id="profile-menu-name"></span>
+                        <button type="button" data-action="nueva-historia">Nueva historia</button>
+                        <button type="button" data-action="mis-historias">Mis historias</button>
+                        <button type="button" data-action="mis-borradores">Mis borradores</button>
+                        <button type="button" data-action="nuevo-dominio">Nuevo dominio</button>
+                        <button type="button" data-action="nueva-instalacion">Nueva instalación</button>
+                        <button type="button" id="logout-btn">Cerrar sesión</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="editor-banner">
+            <span class="tagline" id="banner-tagline">Tu espacio de escritura</span>
+            <h1 id="banner-titulo">Publicar una historia nueva</h1>
+        </div>
+
+        <div class="editor-wrap">
+            <div id="view-nueva">
+                <button type="button" class="volver-link" id="btn-volver" style="display:none;">&larr; Volver</button>
+                <p id="editor-submit-label" style="color: var(--mist); font-size: 13px;">publicar una historia nueva</p>
+
+                <form id="editor-form">
+                    <label for="f-titulo">Título</label>
+                    <input type="text" id="f-titulo" required>
+
+                    <div class="admin-row">
+                        <div>
+                            <label for="f-dominio">Dominio</label>
+                            <select id="f-dominio" required>
+                                <option value="">Elige un dominio</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="f-instalacion">Instalación</label>
+                            <select id="f-instalacion"><option value="">Instalación</option></select>
+                        </div>
+                    </div>
+
+                    <label for="f-portada">URL de la imagen de portada</label>
+                    <input type="text" id="f-portada" placeholder="https://...">
+
+                    <div class="admin-row">
+                        <div>
+                            <label for="f-velas">Calificación (velas)</label>
+                            <select id="f-velas">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3" selected>3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="f-sello">Sello de la historia</label>
+                            <select id="f-sello">
+                                <option value="">Sin sello</option>
+                                <option value="pocion">Poción</option>
+                                <option value="veneno">Veneno</option>
+                                <option value="craneo">Calavera</option>
+                                <option value="gato-negro">Gato negro</option>
+                                <option value="bola-de-cristal">Bola de cristal</option>
+                                <option value="caldera">Caldero</option>
+                                <option value="vispera">Calabaza</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <label for="f-introduccion">Introducción corta</label>
+                    <textarea id="f-introduccion" style="min-height:70px;"></textarea>
+
+                    <label for="f-contenido">Historia completa</label>
+                    <textarea id="f-contenido"></textarea>
+
+                    <div class="admin-actions">
+                        <button type="button" id="btn-nueva" class="btn-ghost">Nueva historia</button>
+                        <button type="button" id="btn-borrador" class="btn-ghost">Guardar borrador</button>
+                        <button type="submit" id="btn-publicar" class="btn-solid">Publicar</button>
+                    </div>
+                </form>
+
+                <p class="admin-error" id="admin-error"></p>
+            </div>
+
+            <div id="view-mis-historias" style="display:none;">
+                <div class="shelf-grid" id="grid-publicadas"></div>
+            </div>
+
+            <div id="view-borradores" style="display:none;">
+                <div class="shelf-grid" id="grid-borradores"></div>
+            </div>
+
+            <div id="view-nuevo-dominio" style="display:none;">
+                <button type="button" class="volver-link" onclick="history.back()">&larr; Volver</button>
+                <p id="seed-note" class="empty-note" style="display:none; text-align:left;">
+                    Todavía no hay dominios cargados. Puedes empezar desde cero, o cargar Londres, Italia y Suecia con sus instalaciones de un solo golpe.
+                    <br><br>
+                    <button type="button" id="btn-sembrar" class="btn-ghost" style="width:auto; padding:10px 20px;">Cargar Londres, Italia y Suecia</button>
+                </p>
+
+                <form id="form-dominio">
+                    <label for="d-nombre">Nombre del dominio</label>
+                    <input type="text" id="d-nombre" required placeholder="Ej. Rumania">
+
+                    <label for="d-tagline">Frase corta (va en cursiva, arriba del título)</label>
+                    <input type="text" id="d-tagline" placeholder="Ej. Castillos entre montañas que nadie ha cartografiado">
+
+                    <label for="d-imagen">URL de la imagen de portada</label>
+                    <input type="text" id="d-imagen" placeholder="https://...">
+
+                    <label for="d-descripcion">Descripción</label>
+                    <textarea id="d-descripcion" style="min-height:100px;"></textarea>
+
+                    <div class="admin-actions">
+                        <button type="submit" class="btn-solid">Crear dominio</button>
+                    </div>
+                </form>
+                <p class="admin-error" id="dominio-error"></p>
+            </div>
+
+            <div id="view-nueva-instalacion" style="display:none;">
+                <button type="button" class="volver-link" onclick="history.back()">&larr; Volver</button>
+
+                <form id="form-instalacion">
+                    <label for="i-dominio">Dominio al que pertenece</label>
+                    <select id="i-dominio" required><option value="">Elige un dominio</option></select>
+
+                    <label for="i-nombre">Nombre de la instalación</label>
+                    <input type="text" id="i-nombre" required placeholder="Ej. El Observatorio Roto">
+
+                    <label for="i-imagen">URL de la imagen</label>
+                    <input type="text" id="i-imagen" placeholder="https://...">
+
+                    <label for="i-descripcion">Descripción corta</label>
+                    <textarea id="i-descripcion" style="min-height:80px;"></textarea>
+
+                    <div class="admin-actions">
+                        <button type="submit" class="btn-solid">Crear instalación</button>
+                    </div>
+                </form>
+                <p class="admin-error" id="instalacion-error"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ventana emergente de lectura -->
+    <div class="reader-overlay" id="reader-overlay">
+        <button class="reader-close" id="reader-close">&times;</button>
+        <div class="reader-book">
+            <div class="cover">
+                <img id="reader-portada" src="" alt="">
+                <p class="tag-line" id="reader-ubicacion"></p>
+            </div>
+            <div class="reader-body">
+                <span class="autor tagline" id="reader-autor"></span>
+                <h2 id="reader-titulo"></h2>
+                <p class="intro" id="reader-intro"></p>
+                <div class="ornament"><span>❧</span></div>
+                <div class="contenido" id="reader-contenido"></div>
+                <div class="ornament ornament-end"><span>❧</span></div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="panel.js"></script>
+</body>
+</html>

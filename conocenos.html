@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/Logos/serpiente.png" type="image/png">
+    <title>Conócenos — Sinfonías del Terror</title>
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Cuprum:ital,wght@0,400..700;1,400..700&family=El+Messiri:wght@400..700&family=Grey+Qo&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+</head>
+<body>
+
+    <nav style="position:absolute; width:100%; z-index:5;">
+        <a href="index.html" class="brand">
+            <img src="img/Logos/serpiente.png" alt="Sinfonías del Terror">
+            <span>Sinfonías del Terror</span>
+        </a>
+        <div class="nav-links" id="navLinks">
+            <button class="nav-close" onclick="hideMenu()">&times;</button>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="campus.html">Dominios</a></li>
+                <li class="active"><a href="conocenos.html">Conócenos</a></li>
+                <li><a href="blog.html">Blog</a></li>
+            </ul>
+        </div>
+        <button class="nav-toggle" onclick="showMenu()">&#9776;</button>
+    </nav>
+
+    <section class="page-hero" style="background-image: linear-gradient(rgba(4,9,30,0.4), var(--navy-void)), url(img/acercas/sangre.jpg);">
+        <div class="container">
+            <span class="tagline">Tres voces, un mismo miedo</span>
+            <h1>Conócenos</h1>
+        </div>
+    </section>
+
+    <section class="section section-dark">
+        <div class="container">
+            <span class="tagline">Enigmas sin resolver</span>
+            <h1 class="section-title">Nuestro Equipo</h1>
+            <p class="section-intro">Somos tres. Cada quien escribe, graba y edita sus propias historias, y cada quien ha estado en un rincón distinto de Londres, Italia y Suecia. Estas son sus voces.</p>
+
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="frame"><img src="img/equipo/sinfonista-del-miedo.jpg" alt="La Sinfonista del Miedo"></div>
+                    <h3>La Sinfonista del Miedo</h3>
+                    <span class="role">Eveline</span>
+                    <p>Toca el piano tan bien como cuenta una historia. Su música conecta con la Posada del Musgo, en Londres, donde asegura haber escrito su primer relato.</p>
+                </div>
+                <div class="team-card">
+                    <div class="frame"><img src="img/equipo/hechicera-de-la-oscuridad.jpg" alt="La Hechicera de la Oscuridad"></div>
+                    <h3>La Hechicera de la Oscuridad</h3>
+                    <span class="role">Seraphina</span>
+                    <p>Dice que aprendió lo que sabe en el Pantano de las Almas, en Italia. No le gusta hablar del precio que pagó por ese conocimiento.</p>
+                </div>
+                <div class="team-card">
+                    <div class="frame"><img src="img/equipo/azrael-el-desterrado.jpg" alt="Azrael el Desterrado"></div>
+                    <h3>Azrael el Desterrado</h3>
+                    <span class="role">Azrael</span>
+                    <p>Fue visto por última vez cerca del Trono de las Ruinas, en Suecia. Desde entonces solo habla a través de sus relatos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-darker">
+        <div class="container bio-block">
+            <div class="frame"><img src="img/acercas/sangre.jpg" alt="La Hora Oscura"></div>
+            <div class="text">
+                <span class="tagline">La Hora Oscura</span>
+                <h2 class="section-title" style="text-align:left;">Cuando el reloj marca la medianoche</h2>
+                <p>El mundo cambia y revela su lado más siniestro. En "La Hora Oscura", cada historia te lleva a través de relatos de misterio, suspenso y terror, donde lo cotidiano se convierte en terrorífico y lo inexplicable cobra vida.</p>
+                <p>Prepárate para explorar los límites de tu valentía mientras descubres los secretos que solo se desvelan en la hora más oscura de la noche.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <h4>Sinfonías del Terror</h4>
+                <p>Historias originales de terror y suspenso, narradas por tres voces desde tres rincones del mundo.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Transmisión</h4>
+                <p>Viernes 12:00 pm</p>
+                <p>Sábado 3:00 am</p>
+            </div>
+            <div class="footer-col">
+                <h4>Síguenos</h4>
+                <div class="footer-social">
+                    <a href="#"><i class="fa fa-instagram"></i></a>
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                    <a href="#"><i class="fa fa-youtube-play"></i></a>
+                    <a href="#"><i class="fa fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            Hecho con <a href="panel.html" aria-label="Panel de Conductores" style="text-decoration:none; color:inherit;"><i class="fa fa-heart-o"></i></a> por Leslie Domínguez
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

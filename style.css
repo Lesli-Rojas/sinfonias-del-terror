@@ -1,0 +1,1431 @@
+/*=============================================
+  SINFONÍAS DEL TERROR — hoja de estilos base
+  Tipografías: El Messiri (cuerpo/títulos), Cuprum (display grande),
+  Grey Qo (acentos en cursiva gótica)
+=============================================*/
+
+:root{
+    --navy-deep: #04091E;
+    --navy-void: #04071D;
+    --off-white: #EDEDE7;
+    --mist: #8b90a3;
+    --blood: #4a0000;
+    --blood-hover: rgba(74, 0, 0, 0.82);
+    --border-fine: rgba(237, 237, 231, 0.35);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "El Messiri", serif;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background: var(--navy-void);
+}
+
+a{
+    color: inherit;
+}
+
+h1, h2, h3{
+    color: var(--off-white);
+    font-weight: 600;
+}
+
+h1.section-title{
+    font-size: clamp(28px, 4vw, 40px);
+    text-align: center;
+    letter-spacing: 0.5px;
+}
+
+p{
+    color: var(--off-white);
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.7;
+}
+
+.tagline{
+    font-family: "Grey Qo", cursive;
+    font-size: 28px;
+    color: var(--mist);
+    font-weight: 400;
+}
+
+.container{
+    width: 84%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hero-btn{
+    display: inline-block;
+    text-decoration: none;
+    color: var(--off-white);
+    border: 1px solid var(--border-fine);
+    padding: 13px 34px;
+    font-size: 13px;
+    letter-spacing: 1px;
+    background: transparent;
+    cursor: pointer;
+    transition: background 0.6s, border-color 0.4s;
+}
+
+.hero-btn:hover{
+    border-color: var(--off-white);
+    background: var(--blood);
+}
+
+/*========== NAV ==========*/
+
+nav{
+    display: flex;
+    padding: 26px 6%;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 5;
+}
+
+.brand{
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    text-decoration: none;
+}
+
+.brand img{
+    width: 46px;
+    height: 46px;
+    object-fit: contain;
+    filter: drop-shadow(0 0 6px rgba(0,0,0,0.6));
+}
+
+/* Páginas internas: la barra cuelga directo del body, sobre fondo azul oscuro */
+body > nav .brand img{
+    filter: invert(1) brightness(2);
+}
+
+.brand span{
+    color: var(--off-white);
+    font-family: "El Messiri", serif;
+    font-size: 17px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+.nav-links{
+    flex: 1;
+    text-align: right;
+}
+
+.nav-links ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 8px 16px;
+    position: relative;
+}
+
+.nav-links ul li a{
+    color: var(--off-white);
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 1.5px;
+}
+
+.nav-links ul li::after{
+    content: '';
+    width: 0%;
+    height: 1px;
+    background: var(--off-white);
+    display: block;
+    margin: 6px auto 0;
+    transition: 0.4s;
+}
+
+.nav-links ul li:hover::after,
+.nav-links ul li.active::after{
+    width: 100%;
+}
+
+.nav-toggle{
+    display: none;
+}
+
+.nav-close{
+    display: none;
+}
+
+@media (max-width: 760px){
+    .brand span{ font-size: 13px; letter-spacing: 2px; }
+    .brand img{ width: 34px; height: 34px; }
+    .nav-toggle{
+        display: block;
+        color: var(--off-white);
+        font-size: 22px;
+        cursor: pointer;
+        background: none;
+        border: none;
+    }
+    .nav-links{
+        position: fixed;
+        background: linear-gradient(rgba(4,9,30,0.94), rgba(4,9,30,0.98)), url(img/Niebla.jpg);
+        background-size: cover;
+        height: 100vh;
+        width: 220px;
+        top: 0;
+        right: -220px;
+        text-align: left;
+        z-index: 20;
+        transition: right 0.5s;
+        padding-top: 70px;
+    }
+    .nav-links.open{
+        right: 0;
+    }
+    .nav-links ul li{
+        display: block;
+    }
+    .nav-close{
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        color: var(--off-white);
+        font-size: 20px;
+        cursor: pointer;
+        background: none;
+        border: none;
+    }
+}
+
+/*========== HERO (Inicio) ==========*/
+
+.hero{
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4,9,30,0.72), rgba(4,9,30,0.8)), url(img/trees-surrounded-by-fogs-forest.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+.hero-content{
+    width: 90%;
+    max-width: 720px;
+    position: absolute;
+    top: 54%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.hero-content .tagline{
+    display: block;
+    margin-bottom: 6px;
+}
+
+.hero-content h1{
+    font-size: clamp(40px, 7vw, 68px);
+    font-family: "Cuprum", sans-serif;
+    letter-spacing: 2px;
+    line-height: 1.05;
+}
+
+.hero-content .lede{
+    font-family: "Grey Qo", cursive;
+    font-size: 27px;
+    color: var(--off-white);
+    margin: 18px 0 36px;
+}
+
+.hero-actions{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/*========== SECTION SHELLS ==========*/
+
+.section{
+    padding: 110px 0;
+    text-align: center;
+}
+
+.section-dark{
+    background: linear-gradient(var(--navy-void), var(--navy-deep));
+}
+
+.section-darker{
+    background: linear-gradient(var(--navy-deep), var(--navy-void));
+}
+
+.section > .tagline{
+    display: block;
+    margin-bottom: 8px;
+}
+
+.section-intro{
+    max-width: 640px;
+    margin: 18px auto 50px;
+}
+
+/*========== CAMPUS TEASER (Inicio) ==========*/
+
+.campus-teaser-grid{
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.campus-card{
+    flex: 1 1 280px;
+    max-width: 360px;
+    aspect-ratio: 3 / 4;
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+    display: block;
+}
+
+.campus-card img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 1.2s ease;
+}
+
+.campus-card .veil{
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(rgba(4,9,30,0.15), rgba(4,9,30,0.85));
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 32px;
+    transition: background 0.6s;
+}
+
+.campus-card h3{
+    font-size: 24px;
+    letter-spacing: 4px;
+    font-weight: 500;
+}
+
+.campus-card:hover img{
+    transform: scale(1.08);
+}
+
+.campus-card:hover .veil{
+    background: var(--blood-hover);
+}
+
+/*========== TESTIMONIOS (carrusel) ==========*/
+
+.carousel{
+    position: relative;
+    max-width: 720px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.carousel-track{
+    display: flex;
+    transition: transform 0.6s ease;
+}
+
+.carousel-slide{
+    flex: 0 0 100%;
+    display: flex;
+    gap: 26px;
+    align-items: center;
+    text-align: left;
+    padding: 8px;
+}
+
+.carousel-slide img{
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+    border: 1px solid var(--border-fine);
+}
+
+.carousel-slide blockquote{
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--off-white);
+    margin-bottom: 10px;
+}
+
+.carousel-slide cite{
+    font-style: normal;
+    font-family: "Grey Qo", cursive;
+    font-size: 24px;
+    color: var(--mist);
+}
+
+.velas{
+    display: flex;
+    gap: 6px;
+    margin-top: 10px;
+}
+
+.velas svg{
+    width: 16px;
+    height: 16px;
+}
+
+.velas .encendida{
+    color: #c98a3a;
+}
+
+.velas .apagada{
+    color: rgba(237, 237, 231, 0.18);
+}
+
+.carousel-dots{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.carousel-dots button{
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: 1px solid var(--off-white);
+    background: transparent;
+    cursor: pointer;
+    padding: 0;
+}
+
+.carousel-dots button.active{
+    background: var(--off-white);
+}
+
+/*========== FOOTER ==========*/
+
+.footer{
+    background: linear-gradient(var(--navy-void), #020410);
+    padding: 70px 0 30px;
+    text-align: center;
+}
+
+.footer-grid{
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    flex-wrap: wrap;
+    text-align: left;
+    margin-bottom: 40px;
+}
+
+.footer-col h4{
+    color: var(--off-white);
+    font-size: 13px;
+    letter-spacing: 2px;
+    margin-bottom: 14px;
+    text-transform: uppercase;
+}
+
+.footer-col p, .footer-col a{
+    font-size: 13px;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 8px;
+    color: var(--mist);
+}
+
+.footer-social{
+    display: flex;
+    gap: 18px;
+}
+
+.footer-social a{
+    color: var(--off-white);
+    font-size: 18px;
+}
+
+.footer-bottom{
+    border-top: 1px solid rgba(237,237,231,0.12);
+    padding-top: 20px;
+    font-size: 12px;
+    color: var(--mist);
+}
+
+@media (max-width: 700px){
+    .section{ padding: 70px 0; }
+    .campus-teaser-grid{ flex-direction: column; align-items: center; }
+}
+
+/*========== PÁGINA CAMPUS ==========*/
+
+.page-hero{
+    min-height: 46vh;
+    display: flex;
+    align-items: flex-end;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    padding-bottom: 50px;
+}
+
+.page-hero::before{
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(rgba(4,9,30,0.35), var(--navy-void));
+}
+
+.page-hero .container{
+    position: relative;
+    text-align: center;
+}
+
+.page-hero h1{
+    font-family: "Cuprum", sans-serif;
+    font-size: clamp(34px, 5vw, 52px);
+    letter-spacing: 2px;
+}
+
+.campus-tabs{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 40px 0 0;
+    flex-wrap: wrap;
+}
+
+.campus-tab{
+    background: none;
+    border: 1px solid var(--border-fine);
+    color: var(--off-white);
+    padding: 12px 30px;
+    font-size: 13px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: background 0.4s;
+}
+
+.campus-tab.active{
+    background: var(--blood);
+    border-color: var(--blood);
+}
+
+.campus-panel{
+    display: none;
+    padding: 70px 0 100px;
+}
+
+.campus-panel.active{
+    display: block;
+}
+
+.campus-panel-intro{
+    max-width: 680px;
+    margin: 0 auto 60px;
+    text-align: center;
+}
+
+.installations{
+    display: flex;
+    gap: 26px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.installation-card{
+    flex: 1 1 300px;
+    max-width: 360px;
+    text-align: left;
+    display: block;
+    text-decoration: none;
+}
+
+.installation-card .ver-historias{
+    display: inline-block;
+    margin-top: 4px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    color: var(--mist);
+}
+
+.installation-card:hover .ver-historias{
+    color: var(--off-white);
+}
+
+.installation-card .frame{
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    margin-bottom: 18px;
+}
+
+.installation-card img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s ease;
+}
+
+.installation-card:hover img{
+    transform: scale(1.05);
+}
+
+.installation-card h3{
+    font-size: 19px;
+    margin-bottom: 8px;
+}
+
+.installation-card p{
+    font-size: 13px;
+    color: var(--mist);
+}
+
+/*========== PÁGINA CONÓCENOS / EQUIPO ==========*/
+
+.team-grid{
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.team-card{
+    flex: 1 1 280px;
+    max-width: 340px;
+    text-align: left;
+}
+
+.team-card .frame{
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.team-card img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 1.2s ease;
+}
+
+.team-card .frame::after{
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: transparent;
+    transition: background 0.6s;
+}
+
+.team-card:hover img{
+    transform: scale(1.08);
+}
+
+.team-card:hover .frame::after{
+    background: var(--blood-hover);
+}
+
+.team-card h3{
+    font-size: 21px;
+    margin-bottom: 4px;
+}
+
+.team-card .role{
+    font-family: "Grey Qo", cursive;
+    color: var(--mist);
+    font-size: 21px;
+    margin-bottom: 14px;
+    display: block;
+}
+
+.team-card p{
+    font-size: 13.5px;
+}
+
+.bio-block{
+    display: flex;
+    gap: 60px;
+    align-items: center;
+    text-align: left;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.bio-block .frame{
+    flex: 1 1 320px;
+    aspect-ratio: 4/5;
+    overflow: hidden;
+}
+
+.bio-block img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.bio-block .text{
+    flex: 1 1 380px;
+}
+
+.bio-block .text p + p{
+    margin-top: 14px;
+}
+
+@media (max-width: 760px){
+    .bio-block{ flex-direction: column; }
+}
+
+/*========== PLACEHOLDER (Blog próximamente) ==========*/
+
+.coming-soon{
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 18px;
+}
+
+/*========== BLOG ==========*/
+
+.blog-filters{
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 60px;
+}
+
+.blog-filters select{
+    background: var(--navy-deep);
+    color: var(--off-white);
+    border: 1px solid var(--border-fine);
+    padding: 10px 18px;
+    font-family: "El Messiri", serif;
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+.blog-filters button{
+    background: none;
+    border: 1px solid var(--border-fine);
+    color: var(--mist);
+    padding: 10px 18px;
+    font-size: 13px;
+    cursor: pointer;
+    letter-spacing: 1px;
+}
+
+.shelf-group{
+    margin-bottom: 70px;
+}
+
+.shelf-group h3{
+    font-size: 20px;
+    letter-spacing: 2px;
+    text-align: left;
+    margin-bottom: 26px;
+    border-bottom: 1px solid rgba(237,237,231,0.15);
+    padding-bottom: 12px;
+}
+
+.shelf-grid{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: flex-start;
+}
+
+.book-card{
+    width: 210px;
+    text-align: left;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+.book-cover{
+    position: relative;
+    aspect-ratio: 3/4.4;
+    overflow: hidden;
+    box-shadow: -6px 6px 18px rgba(0,0,0,0.5);
+    margin-bottom: 14px;
+}
+
+.book-cover img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s ease;
+}
+
+.book-card:hover .book-cover img{
+    transform: scale(1.06);
+}
+
+.book-sello{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    background: rgba(4,9,30,0.75);
+    border-radius: 50%;
+    padding: 6px;
+}
+
+.book-sello img{ width: 100%; height: 100%; object-fit: contain; filter: invert(1) brightness(1.8); }
+
+.book-card h4{
+    color: var(--off-white);
+    font-size: 15px;
+    margin-bottom: 4px;
+    line-height: 1.3;
+}
+
+.book-card .autor{
+    font-family: "Grey Qo", cursive;
+    color: var(--mist);
+    font-size: 17px;
+    display: block;
+    margin-bottom: 6px;
+}
+
+.book-card .velas{
+    margin: 0;
+}
+
+.book-card .velas svg{ width: 13px; height: 13px; }
+
+.empty-note{
+    color: var(--mist);
+    font-size: 14px;
+    text-align: center;
+    padding: 30px 0;
+}
+
+/* ---- Overlay de lectura ---- */
+
+.reader-overlay{
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(2,4,16,0.94);
+    z-index: 50;
+    overflow-y: auto;
+    padding: 60px 6% 100px;
+}
+
+.reader-overlay.open{ display: block; }
+
+.reader-close{
+    position: fixed;
+    top: 24px;
+    right: 30px;
+    background: none;
+    border: 1px solid var(--border-fine);
+    color: var(--off-white);
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    z-index: 51;
+}
+
+.reader-book{
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    gap: 50px;
+    align-items: flex-start;
+}
+
+.reader-book .cover{
+    flex: 1 1 420px;
+    position: sticky;
+    top: 60px;
+}
+
+.reader-book .cover img{
+    width: 100%;
+    aspect-ratio: 3/4.4;
+    object-fit: cover;
+    box-shadow: -10px 10px 30px rgba(0,0,0,0.6);
+}
+
+.reader-book .cover .tag-line{
+    margin-top: 18px;
+    font-size: 13px;
+    color: var(--mist);
+}
+
+.reader-body{
+    flex: 1 1 480px;
+}
+
+.reader-body h2{
+    font-family: "Cuprum", sans-serif;
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+.reader-body .intro{
+    font-family: "Grey Qo", cursive;
+    font-size: 22px;
+    color: var(--mist);
+    margin-bottom: 26px;
+}
+
+.reader-body .contenido p{
+    margin-bottom: 16px;
+    white-space: pre-wrap;
+}
+
+.reader-body .contenido p:first-of-type::first-letter{
+    font-family: "Berkshire Swash", cursive;
+    font-size: 68px;
+    line-height: 0.65;
+    float: left;
+    padding: 8px 12px 0 0;
+    color: var(--off-white);
+}
+
+.ornament{
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin: 30px 0;
+    color: var(--mist);
+    user-select: none;
+}
+
+.ornament::before,
+.ornament::after{
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: rgba(237,237,231,0.22);
+}
+
+.ornament span{
+    font-size: 19px;
+    transform: rotate(180deg);
+    display: inline-block;
+}
+
+.ornament-end{
+    margin-top: 42px;
+    margin-bottom: 0;
+}
+
+@media (max-width: 800px){
+    .reader-book{ flex-direction: column; }
+    .reader-book .cover{ position: static; }
+}
+
+/* ---- Panel de conductores ---- */
+
+.admin-toggle{
+    text-align: center;
+    margin-top: 20px;
+}
+
+.admin-toggle button{
+    background: none;
+    border: none;
+    color: var(--mist);
+    font-size: 12px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.editor-wrap label{
+    display: block;
+    color: var(--mist);
+    font-size: 12px;
+    letter-spacing: 1px;
+    margin: 22px 0 6px;
+}
+
+.editor-wrap input,
+.editor-wrap select,
+.editor-wrap textarea{
+    display: block;
+    width: 100%;
+    background: var(--navy-void);
+    border: 1px solid var(--border-fine);
+    color: var(--off-white);
+    padding: 10px 12px;
+    font-family: "El Messiri", serif;
+    font-size: 14px;
+}
+
+.editor-wrap textarea{
+    min-height: 160px;
+    resize: vertical;
+}
+
+.admin-row{
+    display: flex;
+    gap: 16px;
+}
+
+.admin-row > div{ flex: 1; }
+
+.admin-actions{
+    display: flex;
+    gap: 14px;
+    margin-top: 26px;
+    flex-wrap: wrap;
+}
+
+.admin-actions button{
+    flex: 1;
+    min-width: 140px;
+}
+
+.btn-ghost{
+    background: none;
+    border: 1px solid var(--border-fine);
+    color: var(--off-white);
+    padding: 12px;
+    cursor: pointer;
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+.btn-solid{
+    background: var(--blood);
+    border: 1px solid var(--blood);
+    color: var(--off-white);
+    padding: 12px;
+    cursor: pointer;
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+.admin-mine{
+    margin-top: 40px;
+    border-top: 1px solid rgba(237,237,231,0.12);
+    padding-top: 24px;
+}
+
+.admin-mine-item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(237,237,231,0.08);
+    font-size: 13px;
+    color: var(--off-white);
+}
+
+.admin-mine-item .estado{
+    font-size: 11px;
+    letter-spacing: 1px;
+    padding: 3px 10px;
+    border: 1px solid var(--border-fine);
+    margin-left: 10px;
+}
+
+.admin-mine-item .estado.publicado{
+    border-color: #c98a3a;
+    color: #c98a3a;
+}
+
+.admin-mine-item button{
+    background: none;
+    border: none;
+    color: var(--mist);
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: 12px;
+    margin-left: 12px;
+}
+
+.admin-error{
+    color: #c96a6a;
+    font-size: 13px;
+    margin-top: 12px;
+}
+
+.admin-whoami{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.admin-whoami span{
+    font-family: "Grey Qo", cursive;
+    font-size: 27px;
+    color: var(--off-white);
+}
+
+/*========== PANEL (login secreto) ==========*/
+
+.login-screen{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 20px;
+    background-image: linear-gradient(rgba(4,9,30,0.6), rgba(4,9,30,0.92)), url(img/fondos/reja-cementerio.jpg);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.login-screen .brand-mark img{
+    width: 52px;
+    height: 52px;
+    filter: invert(1) brightness(2);
+}
+
+.back-arrow{
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    color: var(--mist);
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 1px;
+    transition: color 0.3s;
+}
+
+.back-arrow:hover{
+    color: var(--off-white);
+}
+
+.login-screen .brand-mark{
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 30px;
+}
+
+.login-screen .brand-mark img{
+    width: 44px;
+    height: 44px;
+}
+
+.login-screen .brand-mark span{
+    font-size: 16px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--off-white);
+}
+
+.login-screen h1{
+    font-family: "Cuprum", sans-serif;
+    font-size: clamp(30px, 4vw, 42px);
+    margin: 10px 0 34px;
+}
+
+.login-card{
+    width: 100%;
+    max-width: 380px;
+    background: rgba(4, 9, 30, 0.55);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(237,237,231,0.22);
+    padding: 40px 34px;
+    text-align: left;
+}
+
+.login-card label{
+    display: block;
+    color: var(--mist);
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin: 16px 0 6px;
+}
+
+.login-card label:first-child{ margin-top: 0; }
+
+.login-card input{
+    width: 100%;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(237,237,231,0.25);
+    color: var(--off-white);
+    padding: 12px 14px;
+    font-family: "El Messiri", serif;
+    font-size: 14px;
+}
+
+.login-actions{
+    display: flex;
+    gap: 14px;
+    margin-top: 28px;
+}
+
+.login-actions .hero-btn{
+    flex: 1;
+    text-align: center;
+}
+
+#login-error{
+    color: #c96a6a;
+    font-size: 13px;
+    margin-top: 14px;
+}
+
+.welcome-screen{
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 60;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.welcome-screen.open{
+    display: flex;
+}
+
+.welcome-slide{
+    display: none;
+    position: absolute;
+    inset: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 20px;
+    background-size: cover;
+    background-position: center;
+}
+
+.welcome-slide.active{
+    display: flex;
+}
+
+.welcome-slide-1{
+    background-image: linear-gradient(rgba(4,9,30,0.45), rgba(4,9,30,0.85)), url(img/fondos/salon-carmesi.jpg);
+}
+
+.welcome-slide-2{
+    background-image: linear-gradient(rgba(4,9,30,0.55), rgba(4,9,30,0.88)), url(img/fondos/petalos-agujas.jpg);
+}
+
+.welcome-slide h1{
+    font-family: "Cuprum", sans-serif;
+    font-size: clamp(32px, 5vw, 48px);
+    margin: 8px 0 26px;
+    max-width: 640px;
+}
+
+.welcome-slide p.lede{
+    font-family: "Grey Qo", cursive;
+    font-size: 24px;
+    color: var(--off-white);
+    max-width: 520px;
+    margin-bottom: 34px;
+}
+
+.welcome-actions{
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.editor-screen{
+    min-height: 100vh;
+    background: linear-gradient(var(--navy-void), var(--navy-deep));
+    padding-bottom: 80px;
+}
+
+.editor-banner{
+    background-image:
+        linear-gradient(var(--navy-void) 0%, rgba(4,9,30,0.32) 30%, rgba(4,9,30,0.32) 65%, var(--navy-void) 100%),
+        url(img/fondos/salon-carmesi.jpg);
+    background-size: cover;
+    background-position: center;
+    padding: 90px 20px 70px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.editor-top .brand img{
+    filter: invert(1) brightness(2);
+}
+
+.editor-banner h1{
+    font-family: "Cuprum", sans-serif;
+    font-size: clamp(30px, 4.5vw, 46px);
+    letter-spacing: 1px;
+}
+
+.editor-banner .tagline{
+    display: block;
+    margin-bottom: 4px;
+}
+
+.card-actions{
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.card-actions button{
+    flex: 1;
+    background: none;
+    border: 1px solid var(--border-fine);
+    color: var(--off-white);
+    padding: 8px 6px;
+    font-size: 11px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    font-family: "El Messiri", serif;
+    transition: background 0.4s;
+}
+
+.card-actions button:hover{
+    background: var(--blood);
+    border-color: var(--blood);
+}
+
+.book-card.static-card{
+    cursor: default;
+}
+
+.volver-link{
+    display: inline-block;
+    margin-bottom: 24px;
+    color: var(--mist);
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 1px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: "El Messiri", serif;
+    padding: 0;
+}
+
+.volver-link:hover{ color: var(--off-white); }
+
+.editor-top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 26px 6%;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.editor-top-actions{
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+.editor-top a{
+    text-decoration: none;
+    color: var(--mist);
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+@media (max-width: 700px){
+    .editor-top-actions{
+        flex-direction: column-reverse;
+        align-items: flex-end;
+        gap: 8px;
+    }
+    .editor-top-actions a{
+        font-size: 11px;
+    }
+}
+
+.editor-wrap{
+    max-width: 900px;
+    margin: 20px auto 0;
+    padding: 0 20px;
+}
+
+.profile-wrap{
+    position: relative;
+}
+
+.profile-circle{
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 1px solid var(--border-fine);
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    padding: 0;
+}
+
+.profile-menu{
+    display: none;
+    position: absolute;
+    top: 54px;
+    right: 0;
+    width: 220px;
+    background: var(--navy-deep);
+    border: 1px solid var(--border-fine);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.5);
+    z-index: 30;
+    padding: 18px 0;
+}
+
+.profile-menu.open{ display: block; }
+
+.profile-menu-name{
+    display: block;
+    font-family: "Grey Qo", cursive;
+    font-size: 22px;
+    color: var(--off-white);
+    padding: 0 20px 14px;
+    border-bottom: 1px solid rgba(237,237,231,0.1);
+    margin-bottom: 8px;
+}
+
+.profile-menu button{
+    display: block;
+    width: 100%;
+    text-align: left;
+    background: none;
+    border: none;
+    color: var(--off-white);
+    padding: 10px 20px;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    font-family: "El Messiri", serif;
+}
+
+.profile-menu button:hover{
+    background: rgba(255,255,255,0.05);
+}
+
+.profile-menu #logout-btn{
+    color: #c96a6a;
+}

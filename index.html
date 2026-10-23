@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/Logos/serpiente.png" type="image/png">
+    <title>Sinfonías del Terror</title>
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Cuprum:ital,wght@0,400..700;1,400..700&family=El+Messiri:wght@400..700&family=Grey+Qo&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+</head>
+<body>
+
+    <section class="hero">
+        <nav>
+            <a href="index.html" class="brand">
+                <img src="img/Logos/serpiente.png" alt="Sinfonías del Terror">
+                <span>Sinfonías del Terror</span>
+            </a>
+            <div class="nav-links" id="navLinks">
+                <button class="nav-close" onclick="hideMenu()">&times;</button>
+                <ul>
+                    <li class="active"><a href="index.html">Inicio</a></li>
+                    <li><a href="campus.html">Dominios</a></li>
+                    <li><a href="conocenos.html">Conócenos</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+            </div>
+            <button class="nav-toggle" onclick="showMenu()">&#9776;</button>
+        </nav>
+
+        <div class="hero-content">
+            <span class="tagline">Sumérgete en</span>
+            <h1>EL TERROR REAL</h1>
+            <p class="lede">y descubre un mundo de horrores que acechan en la penumbra</p>
+            <div class="hero-actions">
+                <a href="campus.html" class="hero-btn">Explorar</a>
+                <a href="https://www.youtube.com/@Sinfoníasdelterror/featured" class="hero-btn">Nuestro Canal</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-dark">
+        <div class="container">
+            <span class="tagline">Un mundo dentro del mundo</span>
+            <h1 class="section-title">Nuestros Dominios</h1>
+            <p class="section-intro">Tres ciudades, tres formas de terror. Entra a cualquiera de ellas y encontrarás las historias que nuestros conductores han vivido dentro de sus instalaciones.</p>
+
+            <div class="campus-teaser-grid">
+                <a href="campus.html#londres" class="campus-card">
+                    <img src="img/campus/londres/portada.jpg" alt="Campus Londres">
+                    <div class="veil"><h3>Londres</h3></div>
+                </a>
+                <a href="campus.html#italia" class="campus-card">
+                    <img src="img/campus/italia/portada.jpg" alt="Campus Italia">
+                    <div class="veil"><h3>Italia</h3></div>
+                </a>
+                <a href="campus.html#suecia" class="campus-card">
+                    <img src="img/campus/suecia/portada-rivendel.jpg" alt="Campus Suecia">
+                    <div class="veil"><h3>Suecia</h3></div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-darker">
+        <div class="container">
+            <span class="tagline">Lo que dicen quienes ya escucharon</span>
+            <h1 class="section-title">Susurros del Miedo</h1>
+
+            <div class="carousel" id="testimonios-carousel">
+                <div class="carousel-track">
+                    <div class="carousel-slide">
+                        <img src="img/testimonios/vampire-goddess-lilith.jpg" alt="Lilith">
+                        <div>
+                            <blockquote>"Empecé un episodio antes de dormir. Terminé con la luz encendida hasta las tres de la mañana."</blockquote>
+                            <cite>Lilith</cite><div class="velas"><svg viewBox="0 0 24 24" fill="currentColor" class="encendida"><path d="M12 2c1.6 2.1 2.1 3.4 2.1 4.4 0 1.3-.94 2.2-2.1 2.2s-2.1-.9-2.1-2.2C9.9 5.4 10.4 4.1 12 2z"/><rect x="9.9" y="9.4" width="4.2" height="12.6" rx="0.6"/></svg><svg viewBox="0 0 24 24" fill="currentColor" class="encendida"><path d="M12 2c1.6 2.1 2.1 3.4 2.1 4.4 0 1.3-.94 2.2-2.1 2.2s-2.1-.9-2.1-2.2C9.9 5.4 10.4 4.1 12 2z"/><rect x="9.9" y="9.4" width="4.2" height="12.6" rx="0.6"/></svg><svg viewBox="0 0 24 24" fill="currentColor" class="encendida"><path d="M12 2c1.6 2.1 2.1 3.4 2.1 4.4 0 1.3-.94 2.2-2.1 2.2s-2.1-.9-2.1-2.2C9.9 5.4 10.4 4.1 12 2z"/><rect x="9.9" y="9.4" width="4.2" height="12.6" rx="0.6"/></svg><svg viewBox="0 0 24 24" fill="currentColor" class="encendida"><path d="M12 2c1.6 2.1 2.1 3.4 2.1 4.4 0 1.3-.94 2.2-2.1 2.2s-2.1-.9-2.1-2.2C9.9 5.4 10.4 4.1 12 2z"/><rect x="9.9" y="9.4" width="4.2" height="12.6" rx="0.6"/></svg><svg viewBox="0 0 24 24" fill="currentColor" class="apagada"><path d="M12 2c1.6 2.1 2.1 3.4 2.1 4.4 0 1.3-.94 2.2-2.1 2.2s-2.1-.9-2.1-2.2C9.9 5.4 10.4 4.1 12 2z"/><rect x="9.9" y="9.4" width="4.2" height="12.6" rx="0.6"/></svg></div>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="img/testimonios/dorada.jpg" alt="Percky">
+                        <div>
+                            <blockquote>"La forma en que cada conductor cuenta su historia se siente como entrar a un lugar distinto cada vez."</blockquote>
+                            <cite>Percky</cite><div class="velas"><svg viewBox="0 0 24 24" fill="currentColor" class="encendida"><path d="M12 2c1.6 2.1 2.1 3.4 2.1 4.4 0 1.3-.94 2.2-2.1 2.2s-2.1-.9-2.1-2.2C9.9 5.4 10.4 4.1 12 2z"/><rect x="9.9" y="9.4" width="4.2" height="12.6" rx="0.6"/></svg><svg viewBox="0 0 24 24" fill="currentColor" class="encendida"><path d="M12 2c1.6 2.1 2.1 3.4 2.1 4.4 0 1.3-.94 2.2-2.1 2.2s-2.1-.9-2.1-2.2C9.9 5.4 10.4 4.1 12 2z"/><rect x="9.9" y="9.4" width="4.2" height="12.6" rx="0.6"/></svg><svg viewBox="0 0 24 24" fill="currentColor" class="encendida"><path d="M12 2c1.6 2.1 2.1 3.4 2.1 4.4 0 1.3-.94 2.2-2.1 2.2s-2.1-.9-2.1-2.2C9.9 5.4 10.4 4.1 12 2z"/><rect x="9.9" y="9.4" width="4.2" height="12.6" rx="0.6"/></svg><svg viewBox="0 0 24 24" fill="currentColor" class="encendida"><path d="M12 2c1.6 2.1 2.1 3.4 2.1 4.4 0 1.3-.94 2.2-2.1 2.2s-2.1-.9-2.1-2.2C9.9 5.4 10.4 4.1 12 2z"/><rect x="9.9" y="9.4" width="4.2" height="12.6" rx="0.6"/></svg><svg viewBox="0 0 24 24" fill="currentColor" class="encendida"><path d="M12 2c1.6 2.1 2.1 3.4 2.1 4.4 0 1.3-.94 2.2-2.1 2.2s-2.1-.9-2.1-2.2C9.9 5.4 10.4 4.1 12 2z"/><rect x="9.9" y="9.4" width="4.2" height="12.6" rx="0.6"/></svg></div>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="img/testimonios/fantasy-world.jpg" alt="Perséfone">
+                        <div>
+                            <blockquote>"Descubrí el podcast por Suecia y ahora no puedo dejar de imaginar las otras dos ciudades."</blockquote>
+                            <cite>Perséfone</cite><div class="velas"><svg viewBox="0 0 24 24" fill="currentColor" class="encendida"><path d="M12 2c1.6 2.1 2.1 3.4 2.1 4.4 0 1.3-.94 2.2-2.1 2.2s-2.1-.9-2.1-2.2C9.9 5.4 10.4 4.1 12 2z"/><rect x="9.9" y="9.4" width="4.2" height="12.6" rx="0.6"/></svg><svg viewBox="0 0 24 24" fill="currentColor" class="encendida"><path d="M12 2c1.6 2.1 2.1 3.4 2.1 4.4 0 1.3-.94 2.2-2.1 2.2s-2.1-.9-2.1-2.2C9.9 5.4 10.4 4.1 12 2z"/><rect x="9.9" y="9.4" width="4.2" height="12.6" rx="0.6"/></svg><svg viewBox="0 0 24 24" fill="currentColor" class="encendida"><path d="M12 2c1.6 2.1 2.1 3.4 2.1 4.4 0 1.3-.94 2.2-2.1 2.2s-2.1-.9-2.1-2.2C9.9 5.4 10.4 4.1 12 2z"/><rect x="9.9" y="9.4" width="4.2" height="12.6" rx="0.6"/></svg><svg viewBox="0 0 24 24" fill="currentColor" class="encendida"><path d="M12 2c1.6 2.1 2.1 3.4 2.1 4.4 0 1.3-.94 2.2-2.1 2.2s-2.1-.9-2.1-2.2C9.9 5.4 10.4 4.1 12 2z"/><rect x="9.9" y="9.4" width="4.2" height="12.6" rx="0.6"/></svg><svg viewBox="0 0 24 24" fill="currentColor" class="apagada"><path d="M12 2c1.6 2.1 2.1 3.4 2.1 4.4 0 1.3-.94 2.2-2.1 2.2s-2.1-.9-2.1-2.2C9.9 5.4 10.4 4.1 12 2z"/><rect x="9.9" y="9.4" width="4.2" height="12.6" rx="0.6"/></svg></div>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="img/testimonios/blanca.jpg" alt="Blanca">
+                        <div>
+                            <blockquote>"Es de las pocas producciones de terror en español que realmente logra construir un mundo propio."</blockquote>
+                            <cite>Blanca</cite><div class="velas"><svg viewBox="0 0 24 24" fill="currentColor" class="encendida"><path d="M12 2c1.6 2.1 2.1 3.4 2.1 4.4 0 1.3-.94 2.2-2.1 2.2s-2.1-.9-2.1-2.2C9.9 5.4 10.4 4.1 12 2z"/><rect x="9.9" y="9.4" width="4.2" height="12.6" rx="0.6"/></svg><svg viewBox="0 0 24 24" fill="currentColor" class="encendida"><path d="M12 2c1.6 2.1 2.1 3.4 2.1 4.4 0 1.3-.94 2.2-2.1 2.2s-2.1-.9-2.1-2.2C9.9 5.4 10.4 4.1 12 2z"/><rect x="9.9" y="9.4" width="4.2" height="12.6" rx="0.6"/></svg><svg viewBox="0 0 24 24" fill="currentColor" class="encendida"><path d="M12 2c1.6 2.1 2.1 3.4 2.1 4.4 0 1.3-.94 2.2-2.1 2.2s-2.1-.9-2.1-2.2C9.9 5.4 10.4 4.1 12 2z"/><rect x="9.9" y="9.4" width="4.2" height="12.6" rx="0.6"/></svg><svg viewBox="0 0 24 24" fill="currentColor" class="encendida"><path d="M12 2c1.6 2.1 2.1 3.4 2.1 4.4 0 1.3-.94 2.2-2.1 2.2s-2.1-.9-2.1-2.2C9.9 5.4 10.4 4.1 12 2z"/><rect x="9.9" y="9.4" width="4.2" height="12.6" rx="0.6"/></svg><svg viewBox="0 0 24 24" fill="currentColor" class="encendida"><path d="M12 2c1.6 2.1 2.1 3.4 2.1 4.4 0 1.3-.94 2.2-2.1 2.2s-2.1-.9-2.1-2.2C9.9 5.4 10.4 4.1 12 2z"/><rect x="9.9" y="9.4" width="4.2" height="12.6" rx="0.6"/></svg></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-dots"></div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <h4>Sinfonías del Terror</h4>
+                <p>Historias originales de terror y suspenso, narradas por tres voces desde tres rincones del mundo.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Transmisión</h4>
+                <p>Viernes 12:00 pm</p>
+                <p>Sábado 3:00 am</p>
+            </div>
+            <div class="footer-col">
+                <h4>Síguenos</h4>
+                <div class="footer-social">
+                    <a href="#"><i class="fa fa-instagram"></i></a>
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                    <a href="#"><i class="fa fa-youtube-play"></i></a>
+                    <a href="#"><i class="fa fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            Hecho con <a href="panel.html" aria-label="Panel de Conductores" style="text-decoration:none; color:inherit;"><i class="fa fa-heart-o"></i></a> por Leslie Domínguez
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

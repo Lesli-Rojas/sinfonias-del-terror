@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/Logos/serpiente.png" type="image/png">
+    <title>Blog — Sinfonías del Terror</title>
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Cuprum:ital,wght@0,400..700;1,400..700&family=El+Messiri:wght@400..700&family=Grey+Qo&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+</head>
+<body>
+
+    <nav style="position:absolute; width:100%; z-index:5;">
+        <a href="index.html" class="brand">
+            <img src="img/Logos/serpiente.png" alt="Sinfonías del Terror">
+            <span>Sinfonías del Terror</span>
+        </a>
+        <div class="nav-links" id="navLinks">
+            <button class="nav-close" onclick="hideMenu()">&times;</button>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="campus.html">Dominios</a></li>
+                <li><a href="conocenos.html">Conócenos</a></li>
+                <li class="active"><a href="blog.html">Blog</a></li>
+            </ul>
+        </div>
+        <button class="nav-toggle" onclick="showMenu()">&#9776;</button>
+    </nav>
+
+    <section class="page-hero" style="background-image: linear-gradient(rgba(4,9,30,0.4), var(--navy-void)), url(img/campus/londres/salon-musica.jpg);">
+        <div class="container">
+            <span class="tagline">Relatos de nuestros tres conductores</span>
+            <h1>El Blog</h1>
+        </div>
+    </section>
+
+    <section class="section section-dark">
+        <div class="container">
+            <p class="section-intro">Cada historia nace de una instalación real de nuestros dominios. Elige un lugar, o simplemente déjate llevar por lo que encuentres en la estantería.</p>
+
+            <div class="blog-filters">
+                <select id="filtro-dominio"></select>
+                <select id="filtro-instalacion" disabled></select>
+                <button id="filtro-limpiar" type="button">Ver todo</button>
+            </div>
+
+            <div id="shelf"></div>
+        </div>
+    </section>
+
+    <!-- Vista de lectura -->
+    <div class="reader-overlay" id="reader-overlay">
+        <button class="reader-close" id="reader-close">&times;</button>
+        <div class="reader-book">
+            <div class="cover">
+                <img id="reader-portada" src="" alt="">
+                <p class="tag-line" id="reader-ubicacion"></p>
+                <div class="velas" id="reader-velas-lector"></div>
+                <p class="tag-line" id="reader-stats"></p>
+                <p class="tag-line" id="reader-voto-nota" style="color:#c98a3a;"></p>
+            </div>
+            <div class="reader-body">
+                <span class="autor tagline" id="reader-autor"></span>
+                <h2 id="reader-titulo"></h2>
+                <p class="intro" id="reader-intro"></p>
+                <div class="ornament"><span>❧</span></div>
+                <div class="contenido" id="reader-contenido"></div>
+                <div class="ornament ornament-end"><span>❧</span></div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <h4>Sinfonías del Terror</h4>
+                <p>Historias originales de terror y suspenso, narradas por tres voces desde tres rincones del mundo.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Transmisión</h4>
+                <p>Viernes 12:00 pm</p>
+                <p>Sábado 3:00 am</p>
+            </div>
+            <div class="footer-col">
+                <h4>Síguenos</h4>
+                <div class="footer-social">
+                    <a href="#"><i class="fa fa-instagram"></i></a>
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                    <a href="#"><i class="fa fa-youtube-play"></i></a>
+                    <a href="#"><i class="fa fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            Hecho con <a href="panel.html" aria-label="Panel de Conductores" style="text-decoration:none; color:inherit;"><i class="fa fa-heart-o"></i></a> por Leslie Domínguez
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script type="module" src="blog.js"></script>
+</body>
+</html>
